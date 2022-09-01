@@ -15,8 +15,11 @@ app.get("/", (req, res) => {
   res.json("Hello Node!");
 });
 
-// const vehicleApi = require("./src/api/vehicle.api");
-// app.use("/vehicle", vehicleApi());
+const buyerApi = require("./src/api/buyers.api");
+app.use("/buyer", buyerApi());
+
+const formerbuyerApi = require("./src/api/formerbuyers.api");
+app.use("/formerbuyer", formerbuyerApi());
 
 
 
