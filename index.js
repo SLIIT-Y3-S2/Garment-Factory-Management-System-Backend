@@ -15,8 +15,8 @@ app.get("/", (req, res) => {
   res.json("Hello Node!");
 });
 
-// const vehicleApi = require("./src/api/vehicle.api");
-// app.use("/vehicle", vehicleApi());
+const stockInAPI = require("./src/api/stockIn.api");
+app.use("/stockin", stockInAPI());
 
 
 
