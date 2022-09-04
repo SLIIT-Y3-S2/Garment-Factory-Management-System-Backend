@@ -15,10 +15,8 @@ app.get("/", (req, res) => {
   res.json("Hello Node!");
 });
 
-// const vehicleApi = require("./src/api/vehicle.api");
-// app.use("/vehicle", vehicleApi());
-
-
+const ManagerAPI = require("./src/api/Managers.api");
+app.use("/manager", ManagerAPI());
 
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
