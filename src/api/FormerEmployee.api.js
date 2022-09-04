@@ -3,7 +3,8 @@ const router = express.Router();
 const FormerEmployeeController = require("../controller/FormerEmployee.controller.js");
 
 module.exports = function () {
-    router.post("/addFormerEmployee", FormerEmployeeController.AddFormerEmployee);
-    
-    return router;
-    }
+  router.post("/addFormerEmployee", FormerEmployeeController.AddFormerEmployee);
+  router.get("/", FormerEmployeeController.GetAllFormerEmployees);
+
+  return router;
+};
