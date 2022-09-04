@@ -12,7 +12,7 @@ const supplySchema = new Schema({
     required: true,
   },
   qty: {
-    type: Number,
+    type: String,
     required: true,
   },
   price: {
