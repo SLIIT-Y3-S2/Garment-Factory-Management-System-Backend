@@ -20,6 +20,9 @@ app.get("/", (req, res) => {
 const supplierAPI = require("./src/api/Supplier.api");
 app.use("/supplier", supplierAPI());
 
+const supplyAPI = require("./src/api/Supply.api");
+app.use("/supply", supplyAPI());
+
 
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
