@@ -17,7 +17,8 @@ app.get("/", (req, res) => {
 
 // const vehicleApi = require("./src/api/vehicle.api");
 // app.use("/vehicle", vehicleApi());
-
+const supplierAPI = require("./src/api/Supplier.api");
+app.use("/supplier", supplierAPI());
 
 
 app.listen(PORT, () => {
