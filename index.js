@@ -20,6 +20,9 @@ app.get("/", (req, res) => {
 const supplierAPI = require("./src/api/Supplier.api");
 app.use("/supplier", supplierAPI());
 
+const formersupplierAPI = require("./src/api/FormerSuppliers.api");
+app.use("/formersupplier", formersupplierAPI());
+
 const supplyAPI = require("./src/api/Supply.api");
 app.use("/supply", supplyAPI());
 
