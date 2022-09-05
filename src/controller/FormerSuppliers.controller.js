@@ -29,6 +29,6 @@ const getallFormerSuppliers = async (req, res) => {
 };
 
 module.exports = {
-    addFormerSupplier,
-    getallFormerSuppliers,
-}
+  addFormerSupplier,
+  getallFormerSuppliers,
+};

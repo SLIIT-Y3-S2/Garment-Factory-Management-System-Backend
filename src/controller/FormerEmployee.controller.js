@@ -11,16 +11,16 @@ const AddFormerEmployee = async (req, res) => {
 };
 
 const GetAllFormerEmployees = async (req, res) => {
-    await FormerEmployee.find({})
-        .then((data) => {
-            res.status(200).send(data);
-        })
-        .catch((error) => {
-            res.status(500).send({ error: error.message });
-        });
+  await FormerEmployee.find({})
+    .then((data) => {
+      res.status(200).send(data);
+    })
+    .catch((error) => {
+      res.status(500).send({ error: error.message });
+    });
 };
 
 module.exports = {
-    AddFormerEmployee,
-    GetAllFormerEmployees
+  AddFormerEmployee,
+  GetAllFormerEmployees,
 };

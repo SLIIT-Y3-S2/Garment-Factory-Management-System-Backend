@@ -5,12 +5,8 @@ const AddManager = async (req, res) => {
     const manager = new Manager(req.body);
     await manager
       .save()
-      .then((data) => 
-        res.status(200).send(data)
-      )
-      .catch((error) => 
-        res.status(500).send({ error: error.message })
-      );
+      .then((data) => res.status(200).send(data))
+      .catch((error) => res.status(500).send({ error: error.message }));
   }
 };
 
@@ -63,9 +59,9 @@ const DeleteManager = async (req, res) => {
 };
 
 module.exports = {
-    AddManager,
-    GetManager,
-    GetAllManagers,
-    UpdateManager,
-    DeleteManager
+  AddManager,
+  GetManager,
+  GetAllManagers,
+  UpdateManager,
+  DeleteManager,
 };

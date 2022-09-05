@@ -23,45 +23,44 @@ const getStockIn = async (req, res) => {
   }
 };
 
-
 const getAllStockIn = async (req, res) => {
-await StockIn.find()
-.then((data) => {
-  res.status(200).send(data);
-})
-.catch((error) => {
-  res.send(error);
-});
+  await StockIn.find()
+    .then((data) => {
+      res.status(200).send(data);
+    })
+    .catch((error) => {
+      res.send(error);
+    });
 };
 
 const updateStockIn = async (req, res) => {
-console.log(req.body);
-if (req.body) {
-let id = req.params.id;
-await StockIn.findByIdAndUpdate(id, req.body)
-  .then((data) => {
-    res.status(200).send(data);
-  })
-  .catch((err) => {
-    res.send(err);
-  });
-}
+  console.log(req.body);
+  if (req.body) {
+    let id = req.params.id;
+    await StockIn.findByIdAndUpdate(id, req.body)
+      .then((data) => {
+        res.status(200).send(data);
+      })
+      .catch((err) => {
+        res.send(err);
+      });
+  }
 };
 
 const deleteStockIn = async (req, res) => {
-await StockIn.findByIdAndDelete(req.params.id)
-.then(() => {
-  res.status(200).send({ status: "Deleted" });
-})
-.catch((err) => {
-  res.status(500).send(err);
-});
+  await StockIn.findByIdAndDelete(req.params.id)
+    .then(() => {
+      res.status(200).send({ status: "Deleted" });
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
 };
 
 module.exports = {
-addStockIn,
-getStockIn,
-getAllStockIn,
-updateStockIn,
-deleteStockIn,
+  addStockIn,
+  getStockIn,
+  getAllStockIn,
+  updateStockIn,
+  deleteStockIn,
 };

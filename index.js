@@ -26,8 +26,10 @@ app.use("/formersupplier", formersupplierAPI());
 
 const supplyAPI = require("./src/api/Supply.api");
 app.use("/supply", supplyAPI());
+
 const totalStockAPI = require("./src/api/totalStock.api");
 app.use("/totalstock", totalStockAPI());
+
 const ManagerAPI = require("./src/api/Managers.api");
 app.use("/manager", ManagerAPI());
 
@@ -40,4 +42,3 @@ app.use("/formeremployee", FormerEmployeeAPI());
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
 });
-
