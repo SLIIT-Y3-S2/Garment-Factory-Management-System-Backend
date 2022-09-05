@@ -1,33 +1,31 @@
 const mongoose = require("mongoose");
 
-const Schema = mongoose.Schema;
-const supplierSchema = new Schema({
-  supplierId: {
+const EmployeeSchema = new mongoose.Schema({
+  Name: {
     type: String,
     required: true,
   },
-  name: {
+  Email: {
     type: String,
     required: true,
   },
-  mobile: {
+  Mobile: {
     type: String,
     required: true,
   },
-  email: {
+  NIC: {
     type: String,
     required: true,
   },
-  address: {
+  Address: {
     type: String,
     required: true,
   },
-  item: {
+  Position: {
     type: String,
     required: true,
   },
 });
 
-const Supplier = mongoose.model("Suppliers", supplierSchema);
-
-module.exports = Supplier;
+const Employee = mongoose.model("employee", EmployeeSchema);
+module.exports = Employee;

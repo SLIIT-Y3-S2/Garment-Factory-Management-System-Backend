@@ -41,11 +41,8 @@ const getoneSupply = async (req, res) => {
     });
 };
 
-
-
 module.exports = {
   addSupply,
   getallSupplies,
   getoneSupply,
-  
 };

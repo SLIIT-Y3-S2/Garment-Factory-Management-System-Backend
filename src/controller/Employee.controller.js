@@ -1,18 +1,18 @@
-const Manager = require("../model/Managers.model.js");
+const Employee = require("../model/Employee.model.js");
 
-const AddManager = async (req, res) => {
+const AddEmployee = async (req, res) => {
   if (req.body) {
-    const manager = new Manager(req.body);
-    await manager
+    const employee = new Employee(req.body);
+    await employee
       .save()
       .then((data) => res.status(200).send(data))
       .catch((error) => res.status(500).send({ error: error.message }));
   }
 };
 
-const GetManager = async (req, res) => {
+const GetEmployee = async (req, res) => {
   if (req.body) {
-    await Manager.findOne({ Email: req.params.Email })
+    await Employee.findOne({ Email: req.params.Email })
       .then((data) => {
         res.status(200).send(data);
       })
@@ -22,8 +22,8 @@ const GetManager = async (req, res) => {
   }
 };
 
-const GetAllManagers = async (req, res) => {
-  await Manager.find({})
+const GetAllEmployees = async (req, res) => {
+  await Employee.find({})
     .then((data) => {
       res.status(200).send(data);
     })
@@ -32,10 +32,10 @@ const GetAllManagers = async (req, res) => {
     });
 };
 
-const UpdateManager = async (req, res) => {
+const UpdateEmployee = async (req, res) => {
   if (req.body) {
     let id = req.params.id;
-    await Manager.findByIdAndUpdate(id, req.body)
+    await Employee.findByIdAndUpdate(id, req.body)
       .then((data) => {
         res.status(200).send(data);
       })
@@ -45,12 +45,12 @@ const UpdateManager = async (req, res) => {
   }
 };
 
-const DeleteManager = async (req, res) => {
+const DeleteEmployee = async (req, res) => {
   if (req.body) {
     let id = req.params.id;
-    await Manager.findByIdAndDelete(id)
+    await Employee.findByIdAndDelete(id)
       .then(() => {
-        res.status(200).send({ status: "Manager Deleted Successfully" });
+        res.status(200).send({ status: "Employee Deleted Successfully" });
       })
       .catch((error) => {
         res.status(500).send({ error: error.message });
@@ -59,9 +59,9 @@ const DeleteManager = async (req, res) => {
 };
 
 module.exports = {
-  AddManager,
-  GetManager,
-  GetAllManagers,
-  UpdateManager,
-  DeleteManager,
+  AddEmployee,
+  GetEmployee,
+  GetAllEmployees,
+  UpdateEmployee,
+  DeleteEmployee,
 };

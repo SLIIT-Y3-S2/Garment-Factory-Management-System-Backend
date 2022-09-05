@@ -2,11 +2,9 @@ const Supplier = require("../model/Supplier.model");
 const express = require("express");
 const mongoose = require("mongoose");
 
-
 //Add New Supplier
 const addSupplier = async (req, res) => {
   if (req.body) {
-    
     await Supplier(req.body)
       .save()
       .then((data) => {
@@ -73,5 +71,4 @@ module.exports = {
   getoneSupplier,
   updateSupplier,
   deleteSupplier,
-  
 };

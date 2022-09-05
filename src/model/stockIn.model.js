@@ -8,8 +8,8 @@ const StockInSchema = new Schema({
   ReceivedFrom: { type: String, required: true },
   StoredSection: { type: String, required: true },
   StoredBin: { type: String, required: true },
-  Date: { type: String, required: true},
-  Time: { type: String, required: true},
+  Date: { type: String, required: true },
+  Time: { type: String, required: true },
 });
 
 const StockIn = mongoose.model("stockIn", StockInSchema);

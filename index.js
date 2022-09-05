@@ -26,12 +26,19 @@ app.use("/formersupplier", formersupplierAPI());
 
 const supplyAPI = require("./src/api/Supply.api");
 app.use("/supply", supplyAPI());
+
 const totalStockAPI = require("./src/api/totalStock.api");
 app.use("/totalstock", totalStockAPI());
+
 const ManagerAPI = require("./src/api/Managers.api");
 app.use("/manager", ManagerAPI());
+
+const EmployeeAPI = require("./src/api/Employee.api");
+app.use("/employee", EmployeeAPI());
+
+const FormerEmployeeAPI = require("./src/api/FormerEmployee.api");
+app.use("/formeremployee", FormerEmployeeAPI());
 
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
 });
-
