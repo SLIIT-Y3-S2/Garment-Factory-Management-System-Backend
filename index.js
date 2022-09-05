@@ -15,10 +15,11 @@ app.get("/", (req, res) => {
   res.json("Hello Node!");
 });
 
-const stockInAPI = require("./src/api/stockIn.api");
-app.use("/stockin", stockInAPI());
-const supplierAPI = require("./src/api/Supplier.api");
-app.use("/supplier", supplierAPI());
+const buyerApi = require("./src/api/buyers.api");
+app.use("/buyer", buyerApi());
+
+const formerbuyerApi = require("./src/api/formerbuyers.api");
+app.use("/formerbuyer", formerbuyerApi());
 
 const formersupplierAPI = require("./src/api/FormerSuppliers.api");
 app.use("/formersupplier", formersupplierAPI());
