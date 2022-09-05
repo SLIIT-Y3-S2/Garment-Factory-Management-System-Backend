@@ -18,7 +18,8 @@ app.get("/", (req, res) => {
 const stockInAPI = require("./src/api/stockIn.api");
 app.use("/stockin", stockInAPI());
 
-
+const totalStockAPI = require("./src/api/totalStock.api");
+app.use("/totalstock", totalStockAPI());
 
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
