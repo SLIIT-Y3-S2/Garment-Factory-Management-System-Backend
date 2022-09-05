@@ -20,6 +20,8 @@ app.use("/stockin", stockInAPI());
 
 const totalStockAPI = require("./src/api/totalStock.api");
 app.use("/totalstock", totalStockAPI());
+const ManagerAPI = require("./src/api/Managers.api");
+app.use("/manager", ManagerAPI());
 
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
