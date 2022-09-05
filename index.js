@@ -15,8 +15,8 @@ app.get("/", (req, res) => {
   res.json("Hello Node!");
 });
 
-// const vehicleApi = require("./src/api/vehicle.api");
-// app.use("/vehicle", vehicleApi());
+const stockInAPI = require("./src/api/stockIn.api");
+app.use("/stockin", stockInAPI());
 const supplierAPI = require("./src/api/Supplier.api");
 app.use("/supplier", supplierAPI());
 
@@ -25,7 +25,10 @@ app.use("/formersupplier", formersupplierAPI());
 
 const supplyAPI = require("./src/api/Supply.api");
 app.use("/supply", supplyAPI());
-
+const totalStockAPI = require("./src/api/totalStock.api");
+app.use("/totalstock", totalStockAPI());
+const ManagerAPI = require("./src/api/Managers.api");
+app.use("/manager", ManagerAPI());
 
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
