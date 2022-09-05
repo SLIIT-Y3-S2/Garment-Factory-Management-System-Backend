@@ -18,6 +18,12 @@ app.get("/", (req, res) => {
 const ManagerAPI = require("./src/api/Managers.api");
 app.use("/manager", ManagerAPI());
 
+const EmployeeAPI = require("./src/api/Employee.api");
+app.use("/employee", EmployeeAPI());
+
+const FormerEmployeeAPI = require("./src/api/FormerEmployee.api");
+app.use("/formeremployee", FormerEmployeeAPI());
+
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
 });
