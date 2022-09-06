@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const StockInSchema = new Schema({
   GarmentType: { type: String, required: true },
   UnitPrice: { type: String, required: true },
-  Quantity: { type: String, required: true },
+  Quantity: { type: Number, required: true },
   ReceivedFrom: { type: String, required: true },
   StoredSection: { type: String, required: true },
   StoredBin: { type: String, required: true },
