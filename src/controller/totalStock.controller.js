@@ -16,7 +16,7 @@ const getTotalStock = async (req, res) => {
     console.log(req.params.id);
     await TotalStock.findById(req.params.id)
       .then((data) => {
-        res.status(200).send({ data });
+        res.status(200).send( data );
       })
       .catch((err) => {
         res.status(500).send(err);
