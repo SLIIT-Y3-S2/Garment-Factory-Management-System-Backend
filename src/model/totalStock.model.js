@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 const TotalStockSchema = new Schema({
-  GarmentType: { type: String, required: true },
-  Quantity: { type: String, required: true },
+  GarmentType: { type: String},
+  Quantity: { type: Number, required: true },
 });
 
 const TotalStock = mongoose.model("totalstock", TotalStockSchema);

@@ -1,4 +1,5 @@
 const TotalStock = require("../model/totalStock.model");
+const quantity = require("../model/stockIn.model");
 
 const addTotalStock = async (req, res) => {
   if (req.body) {
@@ -37,12 +38,15 @@ const updateTotalStock = async (req, res) => {
   console.log(req.body);
   if (req.body) {
     let id = req.params.id;
+    console.log(id);
     await TotalStock.findByIdAndUpdate(id, req.body)
       .then((data) => {
         res.status(200).send(data);
+        console.log("yyyyyyyyyyyyyyyyyy")
       })
       .catch((err) => {
         res.send(err);
+        console.log("hhhhhhhhhhhhhhhhh")
       });
   }
 };
