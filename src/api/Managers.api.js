@@ -8,6 +8,7 @@ module.exports = function () {
   router.get("/", ManagerController.GetAllManagers);
   router.put("/updateManager/:id", ManagerController.UpdateManager);
   router.delete("/deleteManager/:id", ManagerController.DeleteManager);
+  router.post("/login", ManagerController.LoginManager);
 
   return router;
 };

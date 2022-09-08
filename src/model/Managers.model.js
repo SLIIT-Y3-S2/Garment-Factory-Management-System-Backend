@@ -1,4 +1,7 @@
 const mongoose = require("mongoose");
+const jwt = require("jsonwebtoken");
+const joi = require("joi");
+const passwordComplexity = require("joi-password-complexity");
 
 const ManagerSchema = new mongoose.Schema({
   Name: {
@@ -25,7 +28,35 @@ const ManagerSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  Password: {
+    type: String,
+    required: true,
+  },
 });
 
+
+ManagerSchema.methods.generateAuthToken = function () { 
+  const token = jwt.sign(
+    { _id: this._id },
+    "pkvwhtG4shARypPJ7Ix39f9wobIO8nB5",
+    { expiresIn: "1h" }
+  );
+  return token;
+}
+
 const Manager = mongoose.model("manager", ManagerSchema);
-module.exports = Manager;
+
+const validate = (data) => {
+  const shema = joi.object({
+    Name: joi.string().required().label("Name"),
+    Email: joi.string().required().email().label("Email"),
+    Mobile: joi.string().required().label("Mobile"),
+    NIC: joi.string().required().label("NIC"),
+    Address: joi.string().required().label("Address"),
+    Position: joi.string().required().label("Position"),
+    Password: passwordComplexity().required().label("Password"),
+  });
+  return shema.validate(data);
+}
+
+module.exports = {Manager,validate};
