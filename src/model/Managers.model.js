@@ -37,7 +37,7 @@ const ManagerSchema = new mongoose.Schema({
 
 ManagerSchema.methods.generateAuthToken = function () { 
   const token = jwt.sign(
-    { _id: this._id },
+    { _id: this._id, Name: this.Name, Email: this.Email, Position: this.Position },
     "pkvwhtG4shARypPJ7Ix39f9wobIO8nB5",
     { expiresIn: "1h" }
   );
