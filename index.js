@@ -48,6 +48,9 @@ app.use("/formeremployee", FormerEmployeeAPI());
 const StockInAPI = require("./src/api/stockIn.api");
 app.use("/stockin", StockInAPI());
 
+const StockOutAPI = require("./src/api/stocksOut.api");
+app.use("/stockout", StockOutAPI());
+
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
 });
