@@ -21,6 +21,9 @@ app.use("/buyer", buyerApi());
 const formerbuyerApi = require("./src/api/formerbuyers.api");
 app.use("/formerbuyer", formerbuyerApi());
 
+const deliveryApi = require("./src/api/delivery.api");
+app.use("/delivery", deliveryApi());
+
 const supplierAPI = require("./src/api/Supplier.api");
 app.use("/supplier", supplierAPI());
 
