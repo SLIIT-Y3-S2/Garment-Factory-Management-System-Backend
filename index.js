@@ -51,6 +51,9 @@ app.use("/stockin", StockInAPI());
 const StockOutAPI = require("./src/api/stocksOut.api");
 app.use("/stockout", StockOutAPI());
 
+const DeletedStockAPI = require("./src/api/DeletedStock.api");
+app.use("/deletedstock", DeletedStockAPI());
+
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
 });
