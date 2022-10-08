@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const dotenv = require("dotenv").config();
 const bodyParser = require("body-parser");
 const connectDB = require("./src/config/config");
 const app = express();
@@ -20,6 +21,9 @@ app.use("/buyer", buyerApi());
 
 const formerbuyerApi = require("./src/api/formerbuyers.api");
 app.use("/formerbuyer", formerbuyerApi());
+
+const deliveryApi = require("./src/api/delivery.api");
+app.use("/delivery", deliveryApi());
 
 const supplierAPI = require("./src/api/Supplier.api");
 app.use("/supplier", supplierAPI());
@@ -44,6 +48,9 @@ app.use("/formeremployee", FormerEmployeeAPI());
 
 const StockInAPI = require("./src/api/stockIn.api");
 app.use("/stockin", StockInAPI());
+
+const StockOutAPI = require("./src/api/stocksOut.api");
+app.use("/stockout", StockOutAPI());
 
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
